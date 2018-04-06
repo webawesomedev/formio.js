@@ -36,7 +36,7 @@ export class NumberComponent extends BaseComponent {
   }
 
   get emptyValue() {
-    return 0;
+    return '';
   }
 
   parseNumber(value) {

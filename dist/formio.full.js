@@ -8655,7 +8655,7 @@ var NumberComponent = exports.NumberComponent = function (_BaseComponent) {
   }, {
     key: 'emptyValue',
     get: function get() {
-      return 0;
+      return '';
     }
   }]);
 
