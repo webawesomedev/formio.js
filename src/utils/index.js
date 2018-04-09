@@ -22,6 +22,18 @@ jsonLogic.add_operation('relativeMaxDate', (relativeMaxDate) => {
   return moment().add(relativeMaxDate, 'days').toISOString();
 });
 
+// Retrieve API Data
+jsonLogic.add_operation('getAPIData', (url, nestedProperty) => {
+  var request = new XMLHttpRequest();
+  request.open('GET', url, false);
+  request.send(null);
+  if (request.status === 200) {
+    return _.get(JSON.parse(request.responseText), nestedProperty);
+  } else {
+    return 'Invalid CALL';
+  }
+});
+
 const FormioUtils = {
   jsonLogic, // Share
 
